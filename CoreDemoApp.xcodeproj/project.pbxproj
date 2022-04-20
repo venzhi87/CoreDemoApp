@@ -13,7 +13,6 @@
 		E3118AB4280F3255004833CA /* CoreDemoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E3118AB2280F3255004833CA /* CoreDemoApp.xcdatamodeld */; };
 		E3118AB6280F3259004833CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3118AB5280F3259004833CA /* Assets.xcassets */; };
 		E3118AB9280F3259004833CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3118AB7280F3259004833CA /* LaunchScreen.storyboard */; };
-		E3FDEFD9280F443F00781BE1 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FDEFD8280F443F00781BE1 /* TaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +24,6 @@
 		E3118AB5280F3259004833CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3118AB8280F3259004833CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3118ABA280F3259004833CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E3FDEFD8280F443F00781BE1 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +59,6 @@
 				E3118AA9280F3255004833CA /* AppDelegate.swift */,
 				E3118AAB280F3255004833CA /* SceneDelegate.swift */,
 				E3118AAD280F3255004833CA /* TaskListViewController.swift */,
-				E3FDEFD8280F443F00781BE1 /* TaskViewController.swift */,
 				E3118AB5280F3259004833CA /* Assets.xcassets */,
 				E3118AB7280F3259004833CA /* LaunchScreen.storyboard */,
 				E3118ABA280F3259004833CA /* Info.plist */,
@@ -142,7 +139,6 @@
 			files = (
 				E3118AAE280F3255004833CA /* TaskListViewController.swift in Sources */,
 				E3118AAA280F3255004833CA /* AppDelegate.swift in Sources */,
-				E3FDEFD9280F443F00781BE1 /* TaskViewController.swift in Sources */,
 				E3118AAC280F3255004833CA /* SceneDelegate.swift in Sources */,
 				E3118AB4280F3255004833CA /* CoreDemoApp.xcdatamodeld in Sources */,
 			);

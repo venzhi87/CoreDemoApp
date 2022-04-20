@@ -8,9 +8,6 @@
 import UIKit
 import CoreData
 
-protocol TaskViewControllerDelegate {
-    func reloadData()
-}
 
 class TaskListViewController: UITableViewController {
     
@@ -57,10 +54,10 @@ class TaskListViewController: UITableViewController {
 
     
     @objc private func addNewTask() {
-        let taskVC = TaskViewController()
-        taskVC.delegate = self
-        present(taskVC, animated: true)
+        showAlert(with: "New Task", and: "What do You want to do")
+
     }
+    
     private func fetchData() {
         let fetchRequest = TaskToDo.fetchRequest()
         do {
@@ -71,16 +68,41 @@ class TaskListViewController: UITableViewController {
         
         
     }
-}
-
-extension TaskListViewController :TaskViewControllerDelegate {
-    func reloadData() {
-        fetchData()
-        tableView.reloadData()
+    
+    private func showAlert(with title: String, and message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
+            guard let task = alert.textFields?.first?.text, !task.isEmpty else { return }
+            self.save(task)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        alert.addTextField { textField in
+            textField.placeholder = "New Task"
+        }
+        present(alert, animated: true)
     }
     
-    
+    private func save (_ taskName: String) {
+        let task = TaskToDo(context: viewContext)
+        task.title = taskName
+        tasklist.append(task)
+        
+        let cellIndex = IndexPath(row: tasklist.count - 1, section: 0)
+        tableView.insertRows(at: [cellIndex], with: .automatic)
+        
+        if viewContext.hasChanges {
+            do {
+                try viewContext.save()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
 }
+    
+
 
 extension TaskListViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
